@@ -1,0 +1,141 @@
+@* Archivo: RegistroSimple.cshtml *@
+
+@{
+    ViewData["Title"] = "Registro Simple";
+}
+
+<style>
+    /* Colores clave de la imagen */
+    :root {
+        --color-header: #e0e0e0;
+        --color-left: #a89696;
+        --color-right: #d8c2c2;
+        --color-button: #c0c0d0;
+        --color-background: #f0f0f0;
+    }
+
+    body { margin: 0; background-color: var(--color-background); font-family: Arial, sans-serif; }
+    
+    /* Header (Logo) */
+    .header-logo {
+        background-color: var(--color-header);
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+    }
+
+    /* Contenedor principal y centrado */
+    .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 40px); /* Ajusta por la altura del header */
+        padding-top: 20px;
+    }
+
+    /* Tarjeta de registro (dos columnas) */
+    .register-card {
+        display: flex;
+        width: 650px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    /* Panel Izquierdo (Foto) */
+    .left-panel {
+        background-color: var(--color-left);
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 1.5em;
+        padding: 40px 20px;
+    }
+
+    /* Panel Derecho (Formulario) */
+    .right-panel {
+        background-color: var(--color-right);
+        width: 60%;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .right-panel h2 {
+        margin-bottom: 25px;
+        color: #555;
+        font-size: 1.2em;
+        font-weight: normal;
+    }
+
+    /* Inputs */
+    .input-field {
+        width: 100%;
+        padding: 12px 15px;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 3px;
+        box-sizing: border-box;
+        background-color: white;
+        font-size: 1em;
+        max-width: 300px; /* Para que coincida con el botón */
+    }
+
+    /* Botón */
+    .btn-register {
+        background-color: var(--color-button);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        max-width: 300px;
+        margin-top: 15px;
+        font-size: 1em;
+        border-radius: 3px;
+    }
+</style>
+
+
+<div class="header-logo">
+    <span style="margin-right: 5px;">♻️</span>
+    RE-ESTRENA
+</div>
+
+
+<div class="main-container">
+
+    <div class="register-card">
+
+     
+        <div class="left-panel">
+            foto
+        </div>
+
+   
+        <div class="right-panel">
+            <h2>Ingrese los datos</h2>
+
+          
+            <form method="post" action="/Account/Register"> 
+
+                <input type="email" id="email" name="email" placeholder="email" class="input-field" required />
+                
+                <input type="password" id="contrasena" name="password" placeholder="contraseña" class="input-field" required />
+                
+                <input type="text" id="nombre-completo" name="nombreCompleto" placeholder="nombre completo" class="input-field" required />
+                
+                <input type="text" id="pais" name="pais" placeholder="país" class="input-field" />
+                
+                <input type="text" id="genero" name="genero" placeholder="género" class="input-field" />
+
+                <button type="submit" class="btn-register">Registrarse</button>
+
+            </form>
+        </div>
+    </div>
+</div>
