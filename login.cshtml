@@ -3,25 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Re-Estrena - Iniciar sesión</title>
     
 </head>
 <body>
-<section class = "ingresar">
+    <header>
+        <img src="logo.png" alt="Logo Re-Estrena">
+        <h1>RE-ESTRENA</h1>
+    </header>
 
-    
-        <form method="post" action="login.html">
-            <h1>¿Ya tienes cuenta?</h1>
-            <input type="text" id="name" name="name" placeholder="Enter Email"/>
-           
-            <input type="password" id="contraseña" name="contraseña" placeholder="Enter Password"/>
-            <button type="submit">Ingresar</button>
-        
-            <button type="Sign up">Sign Up</button>
+  <main>
+    <section class="login-box">
+      <div>
+        <h2>¿Ya tienes cuenta?</h2>
+        <form>
+          <label for="usuario">Usuario</label>
+          <input type="text" id="usuario" name="usuario" placeholder="Usuario">
 
-            </section>
+          <label for="contrasena">Contraseña</label>
+          <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña">
 
+          <button type="submit">Iniciar sesión</button>
         </form>
-    
+
+        <section class="registrate">
+          <div>
+            <p>¿No tienes cuenta?</p>
+            <button type="button">Registrarse</button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Copyright - Todos los derechos reservados a Re-Estrena</p>
+  </footer>
 </body>
 </html>

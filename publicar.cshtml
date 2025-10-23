@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Re-Estrena - Subir publicación</title>
 </head>
 <body>
-    
+    <header>
+        <div class="top-bar">
+            <img src="logo.png" alt="Logo Re-Estrena">
+            <h1>RE-ESTRENA</h1>
+            <a href="#">Comprar</a>
+            <a href="#"><img src="icono-usuario.png" alt="Usuario"></a>
+            <a href="#"><img src="icono-favoritos.png" alt="Favoritos"></a>
+            <a href="#"><img src="icono-carrito.png" alt="Carrito"></a>
+        </div>
+    </header>
+
+  <main>
+    <section class="nueva-publicacion">
+      <div class="formulario">
+        <div class="columna-izquierda">
+          <button type="button">Subir foto</button>
+        </div>
+
+        <div class="columna-derecha">
+          <form>
+            <textarea name="descripcion" placeholder="Información del producto"></textarea>
+            <input type="text" name="etiquetas" placeholder="Agregar etiquetas">
+            <input type="number" name="precio" placeholder="Precio">
+            <button type="submit">Subir publicación</button>
+          </form>
+          <button class="eliminar" title="Eliminar publicación">🗑️</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Copyright - Todos los derechos reservados a Re-Estrena</p>
+  </footer>
+  
 </body>
 </html>
