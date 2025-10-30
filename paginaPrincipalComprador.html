@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Re-Estrena - Página principal comprador</title>
+    <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="header-left">
+          <img src="~/imagenes/logo.png" alt="Logo" class="logo" />
+          <div class="brand">RE-ESTRENA</div>
+        </div>
+
+        <nav class="header-actions">
+          <a class="nav-link" href="#">Vender</a>
+          <a href="#" title="Carrito">🛒</a>
+          <a href="#" title="Notificaciones">🔔</a>
+          <a href="#" title="Mensajes">💬</a>
+          <a href="#" title="Perfil">👤</a>
+        </nav>
+      </div>
+
+      <div class="header-search">
+        <ul class="categories">
+          <li>Mujer</li>
+          <li>Hombre</li>
+          <li>Infantil</li>
+          <li>Accesorios</li>
+          <li>Calzado</li>
+        </ul>
+
+        <div class="search-box">
+          <input type="search" placeholder="Buscar producto" />
+        </div>
+      </div>
+    </header>
+
+    <!-- Ofertas badge -->
+    <main class="main-content">
+      <section class="ofertas-wrap">
+        <div class="ofertas-badge">
+          <span>⚙️</span>
+          <h2>Ofertas</h2>
+          <span>⚙️</span>
+        </div>
+      </section>
+
+      <!-- Cards grid: repetir tarjeta para cada publicación -->
+      <section class="cards-grid">
+        <article class="card">
+          <div class="card-image">
+            <img src="~/imagenes/ejemplo1.jpg" alt="Tartan Whisper" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Tartan Whisper</h3>
+            <p class="card-desc">Bufanda de lana con diseño escocés y detalle tejido.</p>
+            <div class="card-meta">
+              <span class="price">$45</span>
+              <a class="like" href="#">♡</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image">
+            <img src="~/imagenes/ejemplo2.jpg" alt="Denim Daze" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Denim Daze</h3>
+            <p class="card-desc">Short de mezclilla azul con detalle desflecado.</p>
+            <div class="card-meta">
+              <span class="price">$50</span>
+              <a class="like" href="#">♡</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image">
+            <img src="~/imagenes/ejemplo3.jpg" alt="Olive Mirage" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Olive Mirage</h3>
+            <p class="card-desc">Campera liviana estilo retro en tonos beige y verde oliva.</p>
+            <div class="card-meta">
+              <span class="price">$150</span>
+              <a class="like" href="#">♡</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Agregar más tarjetas aquí o renderizar dinámicamente -->
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© Copyright - Todos los derechos reservados a Re-Estrena</p>
+    </footer>
+  </div>
+</body>
+</html>
