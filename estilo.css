@@ -1,8 +1,3 @@
-/* wwwroot/css/site.css
-   Hoja de estilos única y simple para la Página principal comprador (y base global).
-   Diseñada para usarse en todas las vistas del proyecto: header, buscador, badge "Ofertas",
-   grid de tarjetas (3 columnas) y responsivo. Rutas de imágenes esperadas en /wwwroot/imagenes.
-*/
 
 /* Reset y base */
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -166,4 +161,225 @@ html, body { height: 100%; background: #f3f4f5; font-family: "Helvetica Neue", A
   .header-inner { flex-wrap: wrap; gap: 8px; }
   .search-box { width: 100%; margin-top: 8px; }
   .header-search .categories { flex-wrap: wrap; gap: 6px; }
+}
+
+:root{
+  --bg: #f3f4f5;
+  --header-blue: #9fb6c9;
+  --beige: #eadfc8;
+  --card-green: #a7bba5;
+  --accent-dark: #16383a;
+  --muted: #6b6b6b;
+  --container-w: 960px;
+  --radius: 10px;
+  --gap: 16px;
+}
+
+* { box-sizing: border-box; margin:0; padding:0; font-family: "Helvetica Neue", Arial, sans-serif; }
+
+/* Page background container */
+body { background: var(--bg); color: var(--accent-dark); -webkit-font-smoothing:antialiased; }
+
+/* Central container */
+.container {
+  max-width: var(--container-w);
+  margin: 18px auto 40px;
+  padding: 0 14px;
+}
+
+/* Top header bar (shared look with comprador) */
+.top-bar {
+  background: var(--header-blue);
+  border-radius: 6px;
+  padding: 10px 14px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* Logo and site title */
+.top-bar img { width:44px; height:44px; object-fit:contain; display:block; }
+.top-bar h1 { font-size:18px; margin:0; font-weight:700; letter-spacing:2px; color:#0f2b31; }
+
+/* Right-side icons/links */
+.top-bar a { margin-left:auto; color:var(--accent-dark); text-decoration:none; display:inline-flex; align-items:center; gap:8px; }
+.top-bar a img { width:20px; height:20px; object-fit:contain; }
+
+/* --- Main layout: profile panel + publicaciones --- */
+main {
+  max-width: var(--container-w);
+  margin: 18px auto;
+  padding: 18px 8px;
+}
+
+/* Profile section container */
+.perfil {
+  display:flex;
+  justify-content:center;
+  margin-bottom: 20px;
+}
+
+/* Use inner panel with beige background like mock */
+.perfil .panel {
+  width:100%;
+  max-width:820px;
+  background: var(--beige);
+  border-radius: var(--radius);
+  padding: 14px;
+  display:flex;
+  gap: var(--gap);
+  align-items:flex-start;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+}
+
+/* Photo box on the left */
+.perfil .foto {
+  width:160px;
+  height:160px;
+  background: #fff;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,0.02);
+}
+.perfil .foto button {
+  background: #a5bda5;
+  color: #073232;
+  padding:10px 14px;
+  border-radius:8px;
+  border:0;
+  cursor:pointer;
+}
+
+/* Datos (nombre, usuario, descripcion) */
+.perfil .datos { flex:1; display:flex; flex-direction:column; gap:8px; }
+.perfil .datos h2 { margin:0; font-size:16px; color:var(--accent-dark); }
+.perfil .datos .username { color:#2f4a4d; font-size:13px; margin-top:-4px; }
+.perfil .datos p { margin:0; color:#16383a; line-height:1.4; font-size:13px; }
+
+/* Small action icons for edit / settings (positioned top-right inside datos) */
+.perfil .datos .actions {
+  margin-left:auto;
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+/* publicaciones section
+
+body.page-comprador .usuario-comprador {
+  max-width: var(--max-w);
+  margin: 18px auto;
+  padding: 0 14px 40px;
+  display: block;
+  gap: 18px;
+}
+
+/* PERFIL COMPACTO */
+body.page-comprador .perfil-compact {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 18px;
+  max-width: 820px;
+}
+
+/* foto */
+body.page-comprador .foto-box {
+  width: 160px;
+  height: 160px;
+  background: var(--card-white);
+  border-radius: 8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,0.03);
+  flex-shrink: 0;
+}
+body.page-comprador .foto-box .btn {
+  background: var(--green-soft);
+  color: #082a2a;
+  border: 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* datos del usuario */
+body.page-comprador .perfil-datos { flex: 1; }
+body.page-comprador .perfil-datos .nombre { margin: 0 0 6px 0; color: var(--accent-dark); font-size: 18px; }
+body.page-comprador .perfil-datos .username { margin: 0 0 8px 0; color: #5b6b6b; font-size: 13px; }
+body.page-comprador .perfil-datos .bio { margin: 0 0 8px 0; color: #16383a; line-height: 1.4; }
+body.page-comprador .perfil-datos .btn-edit { background: transparent; border: 1px solid rgba(0,0,0,0.06); padding: 6px 10px; border-radius: 8px; }
+
+/* LISTAS: favoritas y wishlist */
+body.page-comprador section.favoritas,
+body.page-comprador section.wishlist {
+  max-width: 820px;
+  margin: 10px 0;
+  background: var(--beige);
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+}
+
+body.page-comprador section.favoritas h3,
+body.page-comprador section.wishlist h3 {
+  margin: 0 0 10px 0;
+  color: var(--accent-dark);
+  font-size: 16px;
+}
+
+/* listas internas */
+body.page-comprador .lista-favoritas,
+body.page-comprador .lista-wishlist {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* items */
+body.page-comprador .fav-item,
+body.page-comprador .wish-item {
+  width: calc(33.333% - 12px);
+  background: var(--green-soft);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  min-height: 160px;
+}
+
+body.page-comprador .fav-item h4,
+body.page-comprador .wish-item h4 {
+  margin: 0 0 6px 0;
+  color: var(--accent-dark);
+  font-size: 14px;
+}
+
+body.page-comprador .prod-desc { margin: 0 0 8px 0; color: #123; font-size: 13px; line-height: 1.3; }
+body.page-comprador .tags small { color: #435; }
+body.page-comprador .price strong { background: #fff; padding: 6px 8px; border-radius: 6px; color: var(--accent-dark); }
+
+/* cerrar sesion */
+body.page-comprador .cerrar-sesion { margin-top: 12px; text-align: center; }
+body.page-comprador .btn-logout { background: var(--header-blue); color: #082a2a; padding: 10px 18px; border-radius: 8px; border: 0; cursor: pointer; }
+
+/* Responsivo: dos columnas / una columna */
+@media (max-width: 980px) {
+  body.page-comprador .fav-item,
+  body.page-comprador .wish-item { width: calc(50% - 12px); }
+  body.page-comprador .perfil-compact { flex-direction: column; align-items: flex-start; }
+  body.page-comprador .foto-box { margin-bottom: 8px; }
+}
+@media (max-width: 560px) {
+  body.page-comprador .fav-item,
+  body.page-comprador .wish-item { width: 100%; }
+  body.page-comprador .search-box { width: 100%; margin-top: 8px; }
 }
