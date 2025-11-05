@@ -3,7 +3,7 @@
    Estilos para la página del carrito de compras
    =========================== */
 
-   body.carritoComprador-body {
+   .carritoComprador-body {
     font-family: Arial, sans-serif;
     margin: 0;
     background-color: #f6f6f6;
@@ -884,4 +884,619 @@ body.login-body {
   padding: 12px;
   color: #444;
   font-size: 14px;
+}
+/* Estilos generales */
+.publicar body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Fondo gris claro */
+    margin: 0;
+    padding: 0;
+}
+
+.publicar h1 {
+    margin: 0;
+    font-size: 1.2em;
+    color: white;
+}
+
+.publicar a {
+    text-decoration: none;
+    color: white;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* --- Encabezado y Barra Superior --- */
+.publicar header {
+    background-color: #7d96b0; /* Color azul/gris de la barra superior */
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.publicar .top-bar {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.publicar .top-bar img {
+    height: 20px;
+    margin-right: 5px;
+    filter: invert(100%);
+}
+
+.publicar .top-bar h1 {
+    margin-right: 20px;
+    font-weight: normal;
+}
+
+.publicar .top-bar a:nth-of-type(1) {
+    margin-left: auto;
+    margin-right: 50px;
+    font-weight: bold;
+}
+
+.publicar .top-bar a:not(:nth-of-type(1)) {
+    padding: 0 5px;
+}
+
+.publicar .top-bar a img {
+    height: 24px;
+    width: 24px;
+    filter: invert(100%);
+}
+
+/* --- Contenido Principal: Formulario de Publicación --- */
+.publicar main {
+    padding-top: 20px;
+}
+
+/* Título de la sección "Subir Publicación" */
+.publicar .nueva-publicacion {
+    max-width: 500px; /* Ancho reducido para un formulario de una sola columna */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.publicar .nueva-publicacion::before {
+    content: "SUBIR PUBLICACION";
+    display: block;
+    font-size: 1.2em;
+    font-weight: normal;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Contenedor principal del formulario (la caja beige) */
+.publicar .formulario {
+    background-color: #f7f3ed; /* Color crema/beige */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 30px;
+    /* Eliminamos flex para forzar la pila vertical */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: block;
+}
+
+/* * --------------------------------
+ * MODIFICACIÓN CLAVE: ELIMINACIÓN DE COLUMNAS
+ * --------------------------------
+ */
+
+/* Escondemos el botón de la columna izquierda ya que será reemplazado */
+.publicar .columna-izquierda {
+    display: none;
+}
+
+/* La columna derecha ahora ocupa el 100% y se convierte en el contenedor principal */
+.publicar .columna-derecha {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.publicar .columna-derecha form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Botón de Subir Foto convertido a Input File (simulando un campo) */
+.publicar .foto-placeholder {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    height: 200px; /* Un poco más pequeño que antes */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+}
+
+/* Input para la foto (escondido si usamos un botón custom) */
+/* Si se quiere usar el botón original, se re-estiliza */
+.publicar .columna-derecha button[type="button"] { /* Esto apunta al botón "Subir foto" */
+    background-color: #a4b7a1; /* Verde/gris claro */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    cursor: pointer;
+    display: block; /* Asegura que ocupe su propio espacio */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Campos del formulario (textarea e inputs) */
+.publicar .columna-derecha textarea,
+.publicar .columna-derecha input[type="text"],
+.publicar .columna-derecha input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+/* Área de descripción */
+.publicar .columna-derecha textarea {
+    min-height: 120px; /* Altura ajustada para el formato vertical */
+    resize: none;
+    margin-bottom: 15px;
+}
+
+/* Botón "Subir publicación" */
+.publicar .columna-derecha form button[type="submit"] {
+    background-color: #a4b7a1;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    font-weight: bold;
+    align-self: center;
+    width: 100%; /* El botón ocupa todo el ancho en formato vertical */
+    margin-top: 20px; /* Espacio extra */
+    transition: background-color 0.3s;
+}
+
+.publicar .columna-derecha form button[type="submit"]:hover {
+    background-color: #8c9e89;
+}
+
+/* Botón de Eliminar (papelera) */
+.publicar .eliminar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 0;
+    color: #d1413a;
+}
+
+/* --- Pie de Página --- */
+.publicar footer {
+    background-color: #7d96b0;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+    margin-top: 50px;
+    border-top: 5px solid #4a90e2;
+}
+/* Estilos generales */
+.singUp body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Fondo gris claro */
+    margin: 0;
+    padding: 0;
+}
+
+.signup h1 {
+    margin: 0;
+    font-size: 1.2em;
+    color: white;
+}
+
+/* --- Estilos del Header --- */
+.signUp header {
+    background-color: #7d96b0; /* Color azul/gris de la barra superior */
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.signUp header div {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.signUp header img {
+    height: 20px;
+    margin-right: 10px;
+    filter: invert(100%); /* Icono blanco */
+}
+
+/* Título "Registrarse" */
+.signUp body::before {
+    content: "Registrarse";
+    display: block;
+    font-size: 1.5em;
+    font-weight: normal;
+    color: #555;
+    max-width: 1000px;
+    margin: 20px auto 10px;
+    padding: 0 20px;
+}
+
+/* --- Contenedor Principal (Main) --- */
+.signUp main {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 500px; /* Altura mínima de la caja */
+}
+
+/* --- Sección Imagen Lateral --- */
+.signUp .imagen-lateral {
+    flex: 1;
+    min-width: 50%;
+    overflow: hidden;
+}
+
+.signUp .imagen-lateral img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
+    display: block;
+}
+
+/* --- Sección Formulario --- */
+.signUp .formulario {
+    flex: 1;
+    padding: 30px 40px;
+    background-color: #f7f3ed; /* Fondo beige claro para el formulario */
+    display: flex;
+    flex-direction: column;
+}
+
+.signUp .formulario h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+.signUp .formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Espacio entre los elementos del formulario */
+}
+
+/* Estilo de las etiquetas (labels) */
+.signUp .formulario label {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold; /* Hacer los labels en negrita */
+}
+
+/* Estilo de los campos de entrada (inputs) */
+.signUp .formulario input:not([type="checkbox"]),
+.signUp .formulario select {
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 1em;
+    box-sizing: border-box;
+    /* Estilo para simular el borde más grueso y claro de la imagen */
+    border-color: #c9c9c9;
+    /* Simular el ícono de cerrar/ojo en Contraseña */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23999" viewBox="0 0 16 16"><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+/* Eliminar el ícono simulado en campos que no son contraseña */
+.signUp .formulario input:not([type="password"]):not([type="checkbox"]):not([type="email"]),
+.signUp .formulario select {
+    background-image: none;
+}
+
+/* Espacio específico para el campo País (select) */
+.signUp .formulario select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23999" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592c.859 0 1.319 1.013.753 1.658L8.753 11.14a1 1 0 0 1-1.506 0z"/></svg>');
+    background-position: right 10px center;
+}
+
+
+/* Estilos para el checkbox de privacidad */
+.signUp .formulario div:nth-child(7) { /* Contenedor de Checkbox y Label */
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    gap: 8px;
+}
+
+.signUp .formulario div:nth-child(7) input[type="checkbox"] {
+    min-width: 18px;
+    height: 18px;
+    /* Estilo del checkbox (simulación de borde) */
+    border: 1px solid #7d96b0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.signUp .formulario div:nth-child(7) label {
+    margin: 0;
+    font-weight: normal;
+    color: #333;
+}
+
+/* Estilos para el Newsletter */
+.signUp .formulario div:nth-child(8) { /* Contenedor de Newsletter */
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.signUp .formulario div:nth-child(8) p {
+    font-size: 0.85em;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.signUp .formulario #newsletter {
+    padding: 8px;
+    font-size: 0.9em;
+    background-color: white; /* Diferente color de fondo para distinguirlo */
+    border-color: #ccc;
+}
+
+.signUp .formulario #newsletter::placeholder {
+    color: #999;
+}
+
+
+/* Botón de Registro */
+.signUp .formulario button[type="submit"] {
+    background-color: #a4b7a1; /* Verde/gris suave */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background-color 0.3s;
+}
+
+.signUp .formulario button[type="submit"]:hover {
+    background-color: #8c9e89;
+}
+
+/* --- Pie de Página --- */
+.signUp footer {
+    background-color: #f0f0f0; /* Fondo gris claro */
+    color: #555;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.8em;
+    margin-top: 20px;
+}
+/* Estilos generales */
+.usuarioComprador body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Contenedor Principal (Main) --- */
+.usuarioComprador main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* --- Sección de Información de Usuario (Primera Section) --- */
+.usuarioComprador main section:nth-child(1) {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+/* Contenedor de la Foto de Perfil (Primer div) */
+.usuarioComprador main section:nth-child(1) div:nth-child(1) {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #ccc; /* Placeholder para la foto */
+    border: 3px solid #a4b7a1; /* Borde sutil */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Asegura que la imagen no se desborde */
+}
+
+/* Botón "Subir foto" */
+.usuarioComprador main section:nth-child(1) div:nth-child(1) button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Oscuro semi-transparente */
+    color: white;
+    border: none;
+    padding: 5px 0;
+    font-size: 0.75em;
+    cursor: pointer;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.3s;
+}
+
+/* Mostrar botón al pasar el mouse */
+.usuarioComprador main section:nth-child(1) div:nth-child(1):hover button {
+    opacity: 1;
+}
+
+/* Contenedor de la Descripción del Usuario (Segundo div) */
+.usuarioComprador main section:nth-child(1) div:nth-child(2) {
+    flex-grow: 1;
+    position: relative;
+}
+
+.usuarioComprador main section:nth-child(1) h2 {
+    margin: 0 0 5px 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.usuarioComprador main section:nth-child(1) p {
+    margin: 3px 0;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.usuarioComprador main section:nth-child(1) p:nth-of-type(1) {
+    /* Estilo para @usuario */
+    font-style: italic;
+    color: #777;
+}
+
+/* Botón de Editar (lápiz) */
+.usuarioComprador main section:nth-child(1) button:nth-of-type(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* --- Secciones de Listas (Favoritas y Wishlist) --- */
+.usuarioComprador main section h3 {
+    font-size: 1.2em;
+    color: #7d96b0; /* Color azul/gris de marca */
+    border-bottom: 1px solid #7d96b0;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.usuarioComprador main section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    /* 3 columnas por defecto */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Estilo para cada producto dentro de la lista (li) */
+.usuarioComprador main section ul li {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: #f7f7f7;
+    transition: box-shadow 0.2s;
+    /* Placeholder para la imagen del producto, si la hubiera */
+    min-height: 150px;
+}
+
+.usuarioComprador main section ul li:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.usuarioComprador main section ul li h4 {
+    /* Corregir el h4 que tiene un error de cierre en el HTML */
+    margin-top: 0;
+    font-size: 1em;
+    color: #333;
+}
+
+.usuarioComprador main section ul li p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.usuarioComprador main section ul li small {
+    color: #7d96b0; /* Etiquetas en color de marca */
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.8em;
+}
+
+.usuarioComprador main section ul li b {
+    color: #d1413a; /* Precio en color destacado (rojo) */
+    font-size: 1.1em;
+}
+
+/* --- Sección Cerrar Sesión (Última Section) --- */
+.usuarioComprador main section:last-child {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.usuarioComprador main section:last-child button {
+    background-color: #d1413a; /* Rojo para acción de salida */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.usuarioComprador main section:last-child button:hover {
+    background-color: #a0312a;
+}
+
+/* --- Pie de Página --- */
+.usuarioComprador footer {
+    background-color: #f0f0f0;
+    color: #555;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.8em;
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
 }
