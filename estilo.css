@@ -1,608 +1,887 @@
+/* ===========================
+   carritoComprador.css
+   Estilos para la página del carrito de compras
+   =========================== */
 
-/* Reset y base */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; background: #f3f4f5; font-family: "Helvetica Neue", Arial, sans-serif; color: #213033; -webkit-font-smoothing:antialiased; }
+   body.carritoComprador-body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f6f6f6;
+    color: #333;
+  }
+  
+  /* ======== HEADER ======== */
+  .carritoComprador-header {
+    background-color: #6c7c8f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    color: white;
+  }
+  
+  .carritoComprador-header img {
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .carritoComprador-header h1 {
+    flex: 1;
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .carritoComprador-header a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+  }
+  
+  .carritoComprador-header a img {
+    height: 25px;
+  }
+  
+  /* ======== PRODUCTOS EN CARRITO ======== */
+  #carritoComprador-productos {
+    max-width: 700px;
+    margin: 40px auto;
+    background-color: #f2e3c8;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .carritoComprador-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0dfc5;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #cfc4b1;
+    border-radius: 6px;
+  }
+  
+  .carritoComprador-item img {
+    width: 100px;
+    border-radius: 5px;
+  }
+  
+  .carritoComprador-info {
+    flex: 1;
+    margin-left: 15px;
+  }
+  
+  .carritoComprador-info p {
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .carritoComprador-info small {
+    color: #666;
+  }
+  
+  .carritoComprador-precio {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .carritoComprador-eliminar {
+    color: #b03a2e;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  
+  .carritoComprador-eliminar:hover {
+    color: #e74c3c;
+  }
+  
+  /* ======== RESUMEN DE COMPRA ======== */
+  #carritoComprador-resumen {
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: #f0dfc5;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  #carritoComprador-resumen dl {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+  }
+  
+  #carritoComprador-resumen dt {
+    font-weight: bold;
+  }
+  
+  #carritoComprador-resumen dd {
+    text-align: right;
+    margin: 0;
+  }
+  
+  #carritoComprador-continuar {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    background-color: #9bb09c;
+    color: #1f2e1f;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  #carritoComprador-continuar:hover {
+    background-color: #8fa593;
+  }
+  
+  /* ======== FOOTER ======== */
+  .carritoComprador-footer {
+    text-align: center;
+    background-color: #d6dfd6;
+    color: #333;
+    padding: 10px;
+    font-size: 14px;
+  }
+  /* ===========================
+   informacion.css
+   Estilos para la página de información de Re-Estrena
+   =========================== */
 
-/* Contenedor principal centrado */
-.container { max-width: 980px; margin: 18px auto 40px; padding: 0 14px; }
-
-/* HEADER */
-.site-header { margin-bottom: 8px; }
-
-/* Barra superior (logo + acciones) */
-.header-inner {
-  background: #9fb6c9; /* azul apagado */
-  border-radius: 6px;
-  padding: 10px 14px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.header-left { display: flex; align-items: center; gap: 10px; }
-.logo { width: 40px; height: 40px; object-fit: contain; display:block; }
-.brand { font-weight: 700; letter-spacing: 2px; color: #0f2b31; font-size: 18px; }
-
-/* Acciones a la derecha */
-.header-actions { margin-left: auto; display: flex; gap: 10px; align-items: center; }
-.header-actions a, .header-actions .nav-link { color: #0f2b31; text-decoration: none; padding: 6px; display:inline-block; }
-
-/* Fila de categorias y buscador (dentro del header para coherencia) */
-.header-search {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 6px 8px;
-}
-.header-search .categories {
-  display: flex;
-  gap: 8px;
-  list-style: none;
-  padding-left: 0;
+/* ======== GENERAL ======== */
+body.informacion-body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  color: #0f2b31;
-  font-size: 13px;
-}
-.header-search .categories li {
-  padding: 4px 8px;
-  border-radius: 6px;
-  background: transparent;
+  background-color: #f6f6f6;
+  color: #333;
+  text-align: center;
 }
 
-/* Caja de búsqueda */
-.search-box { margin-left: auto; width: 56%; }
-.search-box input {
-  width: 100%;
-  padding: 8px 12px;
-  border-radius: 18px;
-  border: 0;
-  outline: none;
-  background: white;
-  box-shadow: inset 0 0 0 2px rgba(0,0,0,0.03);
-  font-size: 14px;
-}
-
-/* MAIN */
-.main-content { margin-top: 20px; }
-
-/* Ofertas badge (beige) */
-.ofertas-wrap { margin: 20px 0; display: flex; justify-content: center; }
-.ofertas-badge {
-  width: 100%;
-  max-width: 720px;
-  background: #eadfc8;
-  padding: 16px 20px;
-  border-radius: 14px;
+/* ======== HEADER ======== */
+.informacion-header {
+  background-color: #6c7c8f;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  color: #2f4a4d;
+  justify-content: space-between;
+  padding: 10px 30px;
+  color: white;
 }
-.ofertas-badge h2 { margin: 0; font-size: 18px; font-weight: 500; }
 
-/* GRID tarjetas: flex-wrap para responsividad */
-.cards-grid {
+.informacion-header img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.informacion-header h1 {
+  font-size: 24px;
+  margin: 0;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.informacion-header nav ul {
+  list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  margin-top: 8px;
-  align-items: stretch;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
 }
 
-/* CARD */
-.card {
-  width: calc(33.333% - 12px);
-  background: #a7bba5; /* verde suave */
-  border-radius: 8px;
-  padding: 10px;
+.informacion-header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.informacion-header nav a:hover {
+  text-decoration: underline;
+}
+
+/* ======== PORTADA ======== */
+.informacion-portada {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.informacion-portada img {
+  width: 100
+
+}
+/* ===========================
+   login.css
+   Estilos para la página de inicio de sesión
+   =========================== */
+
+/* ======== ESTILO GENERAL ======== */
+body.login-body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f6f6f6;
+  color: #333;
   display: flex;
   flex-direction: column;
-  min-height: 300px;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
-  overflow: hidden;
+  align-items: center;
 }
 
-/* Area de imagen dentro de la tarjeta */
-.card-image {
-  background: #fff;
-  border-radius: 6px;
-  padding: 10px;
-  height: 140px;
+/* ======== HEADER ======== */
+.login-header {
+  background-color: #6c7c8f;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 10px 30px;
+  color: white;
+}
+
+.login-header img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.login-header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* ======== SECCIÓN PRINCIPAL ======== */
+.login-main {
+  background-image: url("fondo-login.jpg"); /* imagen de fondo (ropa) */
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 80vh;
+  display: flex;
   justify-content: center;
-  overflow: hidden;
-  margin-bottom: 8px;
+  align-items: center;
 }
-.card-image img { max-width: 100%; max-height: 100%; object-fit: contain; display:block; }
 
-/* Contenido de la tarjeta */
-.card-body { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
-.card-title { font-size: 14px; color: #16383a; margin: 0; text-align: left; }
-.card-desc {
-  font-size: 12px;
-  color: #102425;
-  line-height: 1.2;
-  height: 58px; /* truncado visual */
-  overflow: hidden;
-  background: rgba(255,255,255,0.9);
-  padding: 6px;
-  border-radius: 6px;
-}
-.card-meta { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-.price { background: #fff; padding: 6px 10px; border-radius: 6px; font-weight: 600; color: #16383a; }
-.like { color: #7f5a4d; font-size: 14px; text-decoration: none; padding: 4px; }
-
-/* Footer */
-.site-footer {
-  max-width: 980px;
-  margin: 28px auto 40px;
+/* ======== CAJA DE LOGIN ======== */
+.login-box {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 30px 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 350px;
   text-align: center;
-  font-size: 13px;
-  color: #6b6b6b;
-  padding-top: 10px;
-  border-top: 1px solid rgba(0,0,0,0.05);
 }
 
-/* Utilidades legacy y helper */
-.clearfix::after { content: ""; display: table; clear: both; }
-.izq { float: left; width: 25%; }
-.der { float: right; width: 25%; }
-.exp1, .exp2, .exp3, .exp4 { background-size: cover; background-position: center; padding: 10%; margin: 5%; }
-
-/* Responsive: 2 columnas y luego 1 */
-@media (max-width: 980px) {
-  .card { width: calc(50% - 12px); }
-  .search-box { width: 45%; }
-}
-@media (max-width: 560px) {
-  .card { width: 100%; }
-  .header-inner { flex-wrap: wrap; gap: 8px; }
-  .search-box { width: 100%; margin-top: 8px; }
-  .header-search .categories { flex-wrap: wrap; gap: 6px; }
-}
-
-:root{
-  --bg: #f3f4f5;
-  --header-blue: #9fb6c9;
-  --beige: #eadfc8;
-  --card-green: #a7bba5;
-  --accent-dark: #16383a;
-  --muted: #6b6b6b;
-  --container-w: 960px;
-  --radius: 10px;
-  --gap: 16px;
-}
-
-* { box-sizing: border-box; margin:0; padding:0; font-family: "Helvetica Neue", Arial, sans-serif; }
-
-/* Page background container */
-body { background: var(--bg); color: var(--accent-dark); -webkit-font-smoothing:antialiased; }
-
-/* Central container */
-.container {
-  max-width: var(--container-w);
-  margin: 18px auto 40px;
-  padding: 0 14px;
-}
-
-/* Top header bar (shared look with comprador) */
-.top-bar {
-  background: var(--header-blue);
-  border-radius: 6px;
-  padding: 10px 14px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-/* Logo and site title */
-.top-bar img { width:44px; height:44px; object-fit:contain; display:block; }
-.top-bar h1 { font-size:18px; margin:0; font-weight:700; letter-spacing:2px; color:#0f2b31; }
-
-/* Right-side icons/links */
-.top-bar a { margin-left:auto; color:var(--accent-dark); text-decoration:none; display:inline-flex; align-items:center; gap:8px; }
-.top-bar a img { width:20px; height:20px; object-fit:contain; }
-
-/* --- Main layout: profile panel + publicaciones --- */
-main {
-  max-width: var(--container-w);
-  margin: 18px auto;
-  padding: 18px 8px;
-}
-
-/* Profile section container */
-.perfil {
-  display:flex;
-  justify-content:center;
+.login-box h2 {
+  font-size: 20px;
   margin-bottom: 20px;
 }
 
-/* Use inner panel with beige background like mock */
-.perfil .panel {
-  width:100%;
-  max-width:820px;
-  background: var(--beige);
-  border-radius: var(--radius);
-  padding: 14px;
-  display:flex;
-  gap: var(--gap);
-  align-items:flex-start;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
-}
-
-/* Photo box on the left */
-.perfil .foto {
-  width:160px;
-  height:160px;
-  background: #fff;
-  border-radius:8px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-  box-shadow: inset 0 0 0 2px rgba(0,0,0,0.02);
-}
-.perfil .foto button {
-  background: #a5bda5;
-  color: #073232;
-  padding:10px 14px;
-  border-radius:8px;
-  border:0;
-  cursor:pointer;
-}
-
-/* Datos (nombre, usuario, descripcion) */
-.perfil .datos { flex:1; display:flex; flex-direction:column; gap:8px; }
-.perfil .datos h2 { margin:0; font-size:16px; color:var(--accent-dark); }
-.perfil .datos .username { color:#2f4a4d; font-size:13px; margin-top:-4px; }
-.perfil .datos p { margin:0; color:#16383a; line-height:1.4; font-size:13px; }
-
-/* Small action icons for edit / settings (positioned top-right inside datos) */
-.perfil .datos .actions {
-  margin-left:auto;
-  display:flex;
-  gap:8px;
-  align-items:center;
-}
-
-/* publicaciones section
-
-body.page-comprador .usuario-comprador {
-  max-width: var(--max-w);
-  margin: 18px auto;
-  padding: 0 14px 40px;
-  display: block;
-  gap: 18px;
-}
-
-/* PERFIL COMPACTO */
-body.page-comprador .perfil-compact {
+.login-box form {
   display: flex;
-  gap: 18px;
-  align-items: center;
-  margin-bottom: 18px;
-  max-width: 820px;
+  flex-direction: column;
+  gap: 10px;
 }
 
-/* foto */
-body.page-comprador .foto-box {
-  width: 160px;
-  height: 160px;
-  background: var(--card-white);
-  border-radius: 8px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow: inset 0 0 0 2px rgba(0,0,0,0.03);
-  flex-shrink: 0;
+.login-box label {
+  text-align: left;
+  font-size: 14px;
+  color: #333;
 }
-body.page-comprador .foto-box .btn {
-  background: var(--green-soft);
-  color: #082a2a;
-  border: 0;
-  padding: 10px 14px;
-  border-radius: 12px;
+
+.login-box input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f2e3c8;
+}
+
+.login-box button {
+  background-color: #9bb09c;
+  color: #1f2e1f;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-box button:hover {
+  background-color: #8fa593;
+}
+
+/* ======== SECCIÓN DE REGISTRO ======== */
+.login-registrate {
+  margin-top: 20px;
+}
+
+.login-registrate p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.login-registrate button {
+  background-color: #9bb09c;
+  color: #1f2e1f;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
   cursor: pointer;
 }
 
-/* datos del usuario */
-body.page-comprador .perfil-datos { flex: 1; }
-body.page-comprador .perfil-datos .nombre { margin: 0 0 6px 0; color: var(--accent-dark); font-size: 18px; }
-body.page-comprador .perfil-datos .username { margin: 0 0 8px 0; color: #5b6b6b; font-size: 13px; }
-body.page-comprador .perfil-datos .bio { margin: 0 0 8px 0; color: #16383a; line-height: 1.4; }
-body.page-comprador .perfil-datos .btn-edit { background: transparent; border: 1px solid rgba(0,0,0,0.06); padding: 6px 10px; border-radius: 8px; }
-
-/* LISTAS: favoritas y wishlist */
-body.page-comprador section.favoritas,
-body.page-comprador section.wishlist {
-  max-width: 820px;
-  margin: 10px 0;
-  background: var(--beige);
-  border-radius: 10px;
-  padding: 12px;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+.login-registrate button:hover {
+  background-color: #8fa593;
 }
 
-body.page-comprador section.favoritas h3,
-body.page-comprador section.wishlist h3 {
-  margin: 0 0 10px 0;
-  color: var(--accent-dark);
-  font-size: 16px;
+/* ======== FOOTER ======== */
+.login-footer {
+  text-align: center;
+  background-color: #d6dfd6;
+  color: #333;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+}
+/* Estructura general */
+.mensajes-body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
 }
 
-/* listas internas */
-body.page-comprador .lista-favoritas,
-body.page-comprador .lista-wishlist {
+/* Top bar */
+.mensajes-header {
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
+}
+
+.mensajes-top-bar {
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+}
+
+.mensajes-top-bar img {
+  height: 30px;
+}
+
+.mensajes-top-bar h1 {
+  font-size: 18px;
+  margin-right: auto;
+  font-weight: 700;
+}
+
+/* Layout principal */
+.mensajes-main {
+  display: grid;
+  grid-template-columns: 28% 72%;
+  height: calc(100vh - 70px);
+}
+
+/* Lista de chats */
+.mensajes-lista {
+  background: #fff;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+  padding: 15px;
+}
+
+.mensajes-lista h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.mensajes-lista ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* items */
-body.page-comprador .fav-item,
-body.page-comprador .wish-item {
-  width: calc(33.333% - 12px);
-  background: var(--green-soft);
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+.mensajes-lista li {
+  padding: 12px 5px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.mensajes-lista li:hover {
+  background: #f3f3f3;
+}
+
+.mensajes-lista small {
+  color: #999;
+  font-size: 12px;
+}
+
+/* Chat */
+.mensajes-chat {
   display: flex;
   flex-direction: column;
-  min-height: 160px;
-}
-
-body.page-comprador .fav-item h4,
-body.page-comprador .wish-item h4 {
-  margin: 0 0 6px 0;
-  color: var(--accent-dark);
-  font-size: 14px;
-}
-
-body.page-comprador .prod-desc { margin: 0 0 8px 0; color: #123; font-size: 13px; line-height: 1.3; }
-body.page-comprador .tags small { color: #435; }
-body.page-comprador .price strong { background: #fff; padding: 6px 8px; border-radius: 6px; color: var(--accent-dark); }
-
-/* cerrar sesion */
-body.page-comprador .cerrar-sesion { margin-top: 12px; text-align: center; }
-body.page-comprador .btn-logout { background: var(--header-blue); color: #082a2a; padding: 10px 18px; border-radius: 8px; border: 0; cursor: pointer; }
-
-/* Responsivo: dos columnas / una columna */
-@media (max-width: 980px) {
-  body.page-comprador .fav-item,
-  body.page-comprador .wish-item { width: calc(50% - 12px); }
-  body.page-comprador .perfil-compact { flex-direction: column; align-items: flex-start; }
-  body.page-comprador .foto-box { margin-bottom: 8px; }
-}
-@media (max-width: 560px) {
-  body.page-comprador .fav-item,
-  body.page-comprador .wish-item { width: 100%; }
-  body.page-comprador .search-box { width: 100%; margin-top: 8px; }
-}
-
-
-:root{
-  --msgs-left-w: 320px;
-  --msgs-height: 620px;
-  --msgs-gap: 18px;
-}
-
-/* Contenedor de la página de mensajes */
-body.page-mensajes .mensajes-page {
-  max-width: var(--max-w, 980px);
-  margin: 18px auto;
-  padding: 0 14px 40px;
-}
-
-/* Layout: lista de conversaciones (izq) + chat (der) */
-body.page-mensajes .mensajes-panel {
-  display: grid;
-  grid-template-columns: var(--msgs-left-w) 1fr;
-  gap: var(--msgs-gap);
-  align-items: start;
-}
-
-/* ---------- Panel izquierdo: conversaciones ---------- */
-body.page-mensajes .conversaciones {
-  background: var(--beige, #eadfc8);
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
-  height: var(--msgs-height);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-body.page-mensajes .conversaciones h2 {
-  margin: 0 0 8px 0;
-  font-size: 18px;
-  color: var(--accent-dark, #16383a);
   background: #fff;
-  padding: 8px;
-  border-radius: 8px;
+  height: 100%;
+}
+
+.mensajes-chat-header {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  font-weight: 600;
+}
+
+/* Historial */
+.mensajes-chat-historial {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mensajes-fecha {
   text-align: center;
+  color: #aaa;
+  font-size: 12px;
 }
 
-/* Lista scrollable */
-body.page-mensajes .lista-conversaciones {
-  list-style: none;
-  margin: 8px 0 0;
-  padding: 0;
-  overflow: auto;
+/* Mensaje vendedor (sale a la izquierda) */
+.mensajes-msj-vendedor {
+  background: #f1f1f1;
+  padding: 10px 14px;
+  border-radius: 8px;
+  max-width: 60%;
 }
 
-/* Item de conversación */
-body.page-mensajes .lista-conversaciones .conv {
+/* Mensaje cliente (a la derecha) */
+.mensajes-msj-cliente {
+  background: #c8ffc8;
+  padding: 10px 14px;
+  border-radius: 8px;
+  max-width: 60%;
+  align-self: flex-end;
+}
+
+/* Input mensaje */
+.mensajes-input-area {
+  padding: 12px;
   display: flex;
   gap: 10px;
-  align-items: center;
+  border-top: 1px solid #ddd;
+}
+
+.mensajes-input-area input {
+  flex: 1;
   padding: 10px;
-  background: rgba(255,255,255,0.6);
-  border-radius: 8px;
-  margin-bottom: 8px;
-  position: relative;
-  transition: background .12s ease, transform .06s ease;
-}
-body.page-mensajes .lista-conversaciones .conv:hover {
-  transform: translateY(-2px);
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
-/* Conversación activa */
-body.page-mensajes .lista-conversaciones .conv.active {
-  background: rgba(167,187,165,0.18);
-  border-left: 4px solid var(--card-green, #a7bba5);
-}
-
-/* Avatar circular */
-body.page-mensajes .avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: linear-gradient(180deg,#e6e6e6,#cfcfcf);
-  flex-shrink: 0;
-}
-
-/* Cuerpo del item: nombre/fecha/preview */
-body.page-mensajes .conv-body { flex: 1; min-width: 0; }
-body.page-mensajes .conv-top { display:flex; justify-content:space-between; gap:8px; align-items:center; }
-body.page-mensajes .nombre {
+.mensajes-input-area button {
+  padding: 10px 14px;
+  border: none;
+  background: #000;
+  color: white;
   font-weight: 600;
-  color: var(--accent-dark, #16383a);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 150px;
-  display:inline-block;
-}
-body.page-mensajes .fecha { font-size: 12px; color: var(--muted, #6b6b6b); }
-body.page-mensajes .preview {
-  font-size: 13px;
-  color: #344;
-  margin-top: 6px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Botón pequeño (borrar, etc) */
-body.page-mensajes .btn-icon {
-  background: transparent;
-  border: 0;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
-  color: #8b3d3d;
-  padding: 4px;
+}
+/* Layout general */
+.notificacionesVendedor-body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
 }
 
-/* ---------- Panel derecho: chat ---------- */
-body.page-mensajes .chat {
-  background: #fff;
-  border-radius: 8px;
-  border: 2px solid rgba(0,0,0,0.07);
+/* Contenedor principal */
+.notificacionesVendedor-main {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  padding-top: 20px;
+}
+
+/* Título */
+.notificacionesVendedor-main h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  background: #dbe6cb;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #b9c8a7;
+}
+
+/* Lista */
+.notificacionesVendedor-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Item */
+.notificacionesVendedor-lista li {
+  background: #f7e9dc;
+  border: 1px solid #e5c6a8;
+  padding: 12px;
   display: flex;
-  flex-direction: column;
-  height: var(--msgs-height);
-  overflow: hidden;
-}
-
-/* Chat header */
-body.page-mensajes .chat-header {
-  background: var(--card-green, #a7bba5);
-  padding: 10px 14px;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-}
-body.page-mensajes .chat-nombre { margin: 0; font-weight: 600; color: var(--accent-dark, #16383a); }
-
-/* Cuerpo de mensajes con scroll */
-body.page-mensajes .chat-body {
-  padding: 18px;
-  flex: 1;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  background: linear-gradient(180deg, rgba(0,0,0,0.01), rgba(0,0,0,0.00));
-}
-
-/* Separador de fecha */
-body.page-mensajes .chat-date {
-  text-align: center;
-  font-size: 12px;
-  color: var(--muted, #6b6b6b);
-  margin: 6px 0;
-}
-
-/* Burbujas de mensaje */
-body.page-mensajes .bubble {
-  max-width: 70%;
-  padding: 10px 14px;
-  border-radius: 14px;
-  line-height: 1.3;
-  font-size: 14px;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
-}
-body.page-mensajes .bubble-right {
-  background: var(--card-green, #a7bba5);
-  color: #082a2a;
-  align-self: flex-end;
-  border-bottom-right-radius: 4px;
-}
-body.page-mensajes .bubble-left {
-  background: #f0f0f0;
-  color: #123;
-  align-self: flex-start;
-  border-bottom-left-radius: 4px;
-}
-
-/* Espacio final para scroll */
-body.page-mensajes .chat-end { height: 28px; }
-
-/* Form de envío */
-body.page-mensajes .chat-form {
-  display: flex;
-  gap: 8px;
   align-items: center;
-  padding: 8px;
-  border-top: 1px solid rgba(0,0,0,0.04);
-  background: #f6f6f6;
-}
-body.page-mensajes .chat-form input[type="text"] {
-  flex: 1;
-  padding: 10px 12px;
+  gap: 10px;
+  margin-bottom: 10px;
   border-radius: 8px;
-  border: 1px solid rgba(0,0,0,0.06);
-  outline: none;
+  position: relative;
 }
-body.page-mensajes .chat-form .send {
-  background: var(--header-blue, #9fb6c9);
-  border: 0;
-  color: #082a2a;
-  padding: 10px 14px;
+
+/* Ícono usuario */
+.notificacionesVendedor-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #d2d2d2;
+  border-radius: 50%;
+}
+
+/* Texto */
+.notificacionesVendedor-texto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.notificacionesVendedor-texto strong {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.notificacionesVendedor-texto small {
+  font-size: 12px;
+  color: #7b7b7b;
+}
+
+/* Botón eliminar */
+.notificacionesVendedor-eliminar {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #a62323;
+}
+
+.notificacionesVendedor-eliminar:hover {
+  opacity: .7;
+}
+/* General */
+.paginaPrincipalComprador-body {
+  font-family: 'Poppins', sans-serif;
+  background: #f8f8f6;
+  margin: 0;
+}
+
+/* Header */
+.paginaPrincipalComprador-header {
+  background: #bdd0e0;
+  border-bottom: 2px solid #8ca6bb;
+  padding: 10px 20px;
+}
+
+.paginaPrincipalComprador-headerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paginaPrincipalComprador-logo {
+  height: 35px;
+}
+
+.paginaPrincipalComprador-brand {
+  font-size: 20px;
+  font-weight: 700;
+  margin-left: 8px;
+}
+
+.paginaPrincipalComprador-headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.paginaPrincipalComprador-headerActions a {
+  margin-left: 12px;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+/* Categories + Search */
+.paginaPrincipalComprador-searchBar {
+  background: #ebeae4;
+  padding: 5px 20px 10px;
+  border-bottom: 1px solid #c6c6c0;
+}
+
+.paginaPrincipalComprador-categories {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0 0 8px 0;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.paginaPrincipalComprador-categories li {
+  cursor: pointer;
+}
+
+.paginaPrincipalComprador-searchInput input {
+  width: 100%;
+  padding: 7px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+}
+
+/* Ofertas título */
+.paginaPrincipalComprador-ofertasBadge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8eac7;
+  border: 2px solid #ccb178;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 10px 25px;
+  margin: 20px auto;
+}
+
+.paginaPrincipalComprador-ofertasBadge h2 {
+  margin: 0 12px;
+  font-size: 22px;
+}
+
+/* Grid de productos */
+.paginaPrincipalComprador-cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  width: 85%;
+  margin: auto;
+  padding-bottom: 40px;
+}
+
+/* Tarjeta */
+.paginaPrincipalComprador-card {
+  background: #e9eee1;
+  border: 2px solid #b9c8a7;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+
+.paginaPrincipalComprador-cardImg img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.paginaPrincipalComprador-cardBody {
+  padding: 10px;
+}
+
+.paginaPrincipalComprador-cardTitle {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.paginaPrincipalComprador-cardDesc {
+  font-size: 13px;
+  margin-bottom: 5px;
+  min-height: 40px;
+}
+
+.paginaPrincipalComprador-cardMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paginaPrincipalComprador-price {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.paginaPrincipalComprador-like {
+  font-size: 18px;
+  text-decoration: none;
+  color: #a73535;
+}
+
+/* Footer */
+.paginaPrincipalComprador-footer {
+  background: #cad7c3;
+  text-align: center;
+  padding: 12px;
+  color: #444;
+}
+
+/* General */
+.paginaPrincipalVendedor-body {
+  font-family: 'Poppins', sans-serif;
+  background: #f8f8f6;
+  margin: 0;
+}
+
+/* Header */
+.paginaPrincipalVendedor-topBar {
+  background: #bdd0e0;
+  border-bottom: 2px solid #8ca6bb;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 20px;
+}
+
+.paginaPrincipalVendedor-topBar img {
+  height: 35px;
+}
+
+.paginaPrincipalVendedor-topBar h1 {
+  flex: 1;
+  margin: 0;
+  font-size: 22px;
+}
+
+.paginaPrincipalVendedor-topBar a img {
+  height: 22px;
+}
+
+/* Perfil */
+.paginaPrincipalVendedor-perfil {
+  background: #eff2e6;
+  width: 85%;
+  margin: 25px auto;
+  padding: 20px;
+  border: 2px solid #b4c1a3;
+  border-radius: 10px;
+}
+
+.paginaPrincipalVendedor-perfilContenido {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.paginaPrincipalVendedor-foto {
+  width: 160px;
+  height: 160px;
+  border: 2px dashed #7ea082;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+}
+
+.paginaPrincipalVendedor-foto button {
+  background: #d9e7ca;
+  border: none;
+  padding: 10px 15px;
   border-radius: 8px;
   cursor: pointer;
 }
 
-/* ---------- Responsivo ---------- */
-@media (max-width: 900px) {
-  body.page-mensajes .mensajes-panel { grid-template-columns: 1fr; }
-  body.page-mensajes .conversaciones { height: auto; order: 1; }
-  body.page-mensajes .chat { height: 520px; order: 2; }
-}
-@media (max-width: 560px) {
-  body.page-mensajes .chat { height: 420px; }
-  body.page-mensajes .nombre { max-width: 120px; }
+.paginaPrincipalVendedor-datos h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
 }
 
-/* ---------- Accesibilidad / focus ---------- */
-body.page-mensajes .conv:focus,
-body.page-mensajes .btn-icon:focus,
-body.page-mensajes .chat-form input:focus,
-body.page-mensajes .chat-form .send:focus {
-  outline: 3px solid rgba(128,165,145,0.25);
-  outline-offset: 2px;
+.paginaPrincipalVendedor-datos p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.paginaPrincipalVendedor-datos button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Publicaciones */
+.paginaPrincipalVendedor-publicaciones {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.paginaPrincipalVendedor-publicaciones h3 {
+  font-size: 18px;
+  background: #dbe6cb;
+  padding: 10px;
+  border: 2px solid #b4c1a3;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.paginaPrincipalVendedor-listaPublicaciones {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.paginaPrincipalVendedor-producto {
+  background: #e9eee1;
+  border: 2px solid #b9c8a7;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+
+.paginaPrincipalVendedor-producto img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.paginaPrincipalVendedor-producto h4 {
+  font-size: 15px;
+  margin: 8px 0;
+  font-weight: 700;
+}
+
+.paginaPrincipalVendedor-producto p {
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+.paginaPrincipalVendedor-producto button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Cerrar sesión */
+.paginaPrincipalVendedor-logout {
+  width: 100%;
+  text-align: center;
+  margin: 25px 0;
+}
+
+.paginaPrincipalVendedor-logout button {
+  background: #d1d1d1;
+  border: 2px solid #999;
+  padding: 12px 30px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Footer */
+.paginaPrincipalVendedor-footer {
+  background: #cad7c3;
+  text-align: center;
+  padding: 12px;
+  color: #444;
+  font-size: 14px;
 }
