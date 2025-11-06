@@ -4,71 +4,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Re-Estrena - Usuario</title>
   <link rel="stylesheet" href="estilo.css">
 </head>
 
-<body class="view-@ViewContext.RouteData.Values['controller'] - @ViewContext.RouteData.Values['action']"></body>>
-<main>
-  <section>
-    <div>
-      <button>Subir foto</button>
-    </div>
+<body>
+  <main>
+    <section class = "UsuarioC-Perfil">
+      <div>
+        <button href='@Url.Action("", "")'>Subir Foto</button> //deberia abrir la carpeta de archivos de tu compu para que agregues foto. 
+      </div>
 
-    <div>
-      <h2>Nombre usuario</h2>
-      <p>@usuario</p>
-      <p>Descripcion del usuario</p>
-      <button>✏️</button>
-    </div>
-  </section>
+      <div>
+        <h2>@ViewBag.Usuario.nombreCompleto</h2>
+        <p>@ViewBag.Usuario.Descripcion</p>
+        <form action='@Url.Action("Formulario", "AccountController")' method = "POST" enctype="multipart/form-data">
+        <textarea name="Descripcion" rows = "10" cols = "50" placeholder = "Descripcion del usuario">
+        </textarea>
+        <button href='@Url.Action("editarUsuario", "AccountController")'>Editar</button>
+      </div>
+    </section>
 
-  <section>
+  <section class = "UsuarioC-Lista">
     <h3>Favoritas:</h3>
-    <ul>
-      <li>
-        <h4>Nombre Producto</h4>
-        <p>Descripcion del producto</p>
-        <p><small>etiquetas</small></p>
-        <p><b>precio</b></p>
-      </li>
-      <li>
-        h4>Nombre Producto</h4>
-        <p>Descripcion del producto</p>
-        <p><small>etiquetas</small></p>
-        <p><b>precio</b></p>
-      </li>
-      <li>
-        h4>Nombre Producto</h4>
-        <p>Descripcion del producto</p>
-        <p><small>etiquetas</small></p>
-        <p><b>precio</b></p>
-      </li>
-    </ul>
+      <ul>
+        <li>
+          <h4>@ViewBag.Publicacion.NombreProducto</h4>
+          <p>@ViewBag.Publicacion.Descripcion</p>
+          <p>etiquetas</p>
+          <p><b>precio</b></p>
+        </li>
+      </ul>
   </section>
 
-  <section>
+  <section class = "UsuarioC-Lista">
     <h3>Wishlist:</h3>
     <ul>
-      <li>
-        h4>Nombre Producto</h4>
-        <p>Descripcion del producto</p>
-        <p><small>etiquetas</small></p>
-        <p><b>precio</b></p>
-      </li>
-      <li>
-        h4>Nombre Producto</h4>
-        <p>Descripcion del producto</p>
-        <p><small>etiquetas</small></p>
-        <p><b>precio</b></p>
-      </li>
-      <li>
-        h4>Nombre Producto</h4>
-        <p>Descripcion del producto</p>
-        <p><small>etiquetas</small></p>
-        <p><b>precio</b></p>
-      </li>
-    </ul>
+        <li>
+          <h4>@ViewBag.Publicacion.NombreProducto</h4>
+          <p>@ViewBag.Publicacion.Descripcion</p>
+          <p>etiquetas</p>
+          <p><b>precio</b></p>
+        </li>
+      </ul>
   </section>
 
   <section>

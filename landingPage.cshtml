@@ -6,20 +6,20 @@
     <title>Re-Estrena</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
-<body class="view-@ViewContext.RouteData.Values['controller'] - @ViewContext.RouteData.Values['action']"></body>>
-        <header>
+<body>
+    <header class = "landing">
         <img src="logo.png" alt="Logo Re-Estrena">
         <h1>RE-ESTRENA</h1>
         <nav>
           <ul>
-              <li><a href="#">Iniciar sesión</a></li>
-              <li><a href="#">Registrarse</a></li>
+            <a href='@Url.Action("login", "OnBoardingController")'> Iniciar Sesion</a>
+            <a href='@Url.Action("registro", "OnBoardingController")'>Registrarse</a>
           </ul>
         </nav> 
     </header>
 
   <!-- Sección principal / portada -->
-  <section>
+  <section class = "landing-intro">
     <img src="portada-ropa.jpg" alt="Ropa de colores">
     <div>
       <h2>Dale una nueva vida a la moda.</h2>
@@ -28,7 +28,7 @@
   </section>
 
   <!-- Sección: Qué es ReEstrena -->
-  <section class="Sobre">
+  <section class="landing-Sobre">
     <h2>¿Qué es ReEstrena?</h2>
     <div>
       <img src="icono-reciclaje.png" alt="Icono reciclaje">
@@ -40,7 +40,7 @@
   </section>
 
   <!-- Sección: Por qué elegirnos -->
-  <section class="Elegirnos">
+  <section class="landing-Elegirnos">
     <h2>¿Por qué elegirnos?</h2>
     <ul>
       <li>Moda sostenible</li>
@@ -51,33 +51,33 @@
   </section>
 
   <!-- Sección: Productos destacados -->
-  <section class="ProduDestacados">
+  <section class="landing-ProduDestacados">
     <h2>Productos destacados:</h2>
-    <div>
-      <article>
-        <img src="remera.jpg" alt="Remera básica de algodón">
-        <h3>Remera básica de algodón</h3>
-        <p>Blanca con estampado vintage en el frente</p>
-      </article>
+      <div>
+        <article>
+          <img src="remera.jpg" alt="Remera básica de algodón">
+          <h3>Remera básica de algodón</h3>
+          <p>Blanca con estampado vintage en el frente</p>
+        </article>
 
-      <article>
-        <img src="minifalda.jpg" alt="Minifalda negra">
-        <h3>Minifalda negra de polyester</h3>
-        <p>Con moño rojo, talle M, en excelente estado</p>
-      </article>
+        <article>
+          <img src="minifalda.jpg" alt="Minifalda negra">
+          <h3>Minifalda negra de polyester</h3>
+          <p>Con moño rojo, talle M, en excelente estado</p>
+        </article>
 
-      <article>
-        <img src="zapatos.jpg" alt="Zapatos de cuero">
-        <h3>Zapatos de cuero rojo y negro</h3>
-        <p>Taco medio, modelo clásico con hebilla</p>
-      </article>
+        <article>
+          <img src="zapatos.jpg" alt="Zapatos de cuero">
+          <h3>Zapatos de cuero rojo y negro</h3>
+          <p>Taco medio, modelo clásico con hebilla</p>
+        </article>
     </div>
   </section>
 
   <!-- Sección final -->
-  <section>
+  <section class = "landing-arribaFooter">
     <p>¿Querés comprar o vender? Crea tu cuenta gratis y comenzá ahora</p>
-    <a href="@Url.Action("Registrarse", "Usuario")">Registrarse</a>
+      <a href='@Url.Action("registro", "OnBoardingController")'>Registrarse</a>
   </section>
 
   <footer>
